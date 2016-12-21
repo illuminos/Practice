@@ -3,16 +3,19 @@
 import React from 'react';
 import ImageDetail from './image_detail';
 
-const IMAGES = [
-    { title: 'Pen', link:'https://dummyimage.com/600x400'},
-    { title: 'Pine Tree', link: 'https://dummyimage.com/600x400'},
-    { title: 'Mug', link: 'https://dummyimage.com/600x400'}
-];
+// const IMAGES = [
+//     { title: 'Pen', link:'https://dummyimage.com/600x400'},
+//     { title: 'Pine Tree', link: 'https://dummyimage.com/600x400'},
+//     { title: 'Mug', link: 'https://dummyimage.com/600x400'}
+// ];
 
 // create our component
-const ImageList = () => {
-    const RenderedImages = IMAGES.map((image)=>        
-        <ImageDetail key={image.title} title={image.title} link={image.link}/>
+const ImageList = (props) => {
+
+    const validImages = props.images.filter(image => !image.is_album);
+    const RenderedImages = validImages.map((image)=>        
+        <ImageDetail key={image.id} title={image.title} link={image.link} description={image.description}
+        ups={image.ups} downs={image.downs}/>
     );
     
     return (

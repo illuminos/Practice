@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageScore from './image_score';
 
 const ImageDetail = (props)=>{
     
@@ -11,6 +12,8 @@ const ImageDetail = (props)=>{
             <h4 className="media-heading">
             {props.title}
             </h4>
+            <p>{props.description}</p>
+            <ImageScore ups={props.ups} downs={props.downs}/>
         </div>
         </li>        
     )
