@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import EmployeeList from './components/employee_list';
 //After meteor loads in the browser, render my app to the dom
 
 
 const App = ()=>{
     return(
-        <div>Hello there!</div>
+        <div>
+            <EmployeeList/>
+        </div>
     );
 };
 
