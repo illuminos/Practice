@@ -1,0 +1,1 @@
+This project combines Meteor and React and builds an information directory generated from random data using Faker api.
